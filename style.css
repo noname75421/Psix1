@@ -418,7 +418,7 @@ body {
     position: absolute;
     bottom: 32px;
     right: 56px;
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-size: 30px;
 }
 
@@ -431,7 +431,7 @@ body {
 
 
 .coment {
-    background-color: #E5E5E5;
+    background-color: #000000;
     padding-top: 104px;
     padding-bottom: 139px;
 }
@@ -524,7 +524,7 @@ body {
 .footer {
     background-color: #000;
     padding: 50px 0px;
-    color: #fff;
+    color: rgb(255, 252, 252);
     text-align: center;
 }
 
@@ -715,8 +715,11 @@ button {
         font-size: 23px;
     }
 
+.banner-img img {
+    height: 70px;
+    width: 150px;
+    margin-right: 50px;
 }
-
 
 
 

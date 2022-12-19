@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='stylesheet' href='style_1.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>FindFilms</title>
+</head>
+<body>
+    <div class="header">
+        <div class='container'>
+            <div class="button">
+                    <p><a href="index.html">
+                        <img src="home.png" alt="" /></p>
+                </div>
+            <div class='header-line'>
+                <div class='header-logo'>
+                    <img src="logo.png" alt="">
+                    <h1>Система Охлаждения</h1>
+                </div>
+            </div>  
+            <section class="card-container">
+                        <div class="card">
+                            <div class="face face-1">
+                                <img src="57.jpg" alt="" />
+                                <h3>Классический тип</h3>
+                            </div>
+                            <div class="face face-2">
+                                <p>Активное воздушное охлаждение. Совместно с радиаторами используется один или несколько вентиляторов, которые ускоряют рассеивание. Кулеры устанавливаются на большинство процессоров из среднего и топового сегмента, а также на видеокартах. Системы более эффективные по сравнению с предыдущими, но шумят и создают вибрации, а также требуют питания для вентиляторов. </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="face face-1">
+                                <img src="56.jpg" alt="" />
+                                <h3>Башенный тип</h3>
+                            </div>
+                            <div class="face face-2">
+                                <p>Первые модели башенных кулеров могли работать нестабильно (например, первые модели IceHammer 4000 в котором хладагент бывало испарялся), но современные модели справляются со всеми горячими процессорами, да еще и в разгоне. Главное, чтобы было достаточно теплоотводных трубок, забирающих тепло от процессора и рассеивающих их на массивных ребрах кулера, с которого тепло выдувается с помощью тех же вентиляторов. Для таких и 125 Вт от процессора – легкая забава. Именно тепловые трубки и радиатор увеличенной площади - основа</p>
+                            </div>
+                        </div> 
+
+                        <div class="card">
+                            <div class="face face-1">
+                                <img src="55.jpg" alt="" />
+                                <h3>Система жидкостного охлаждения</h3>
+                            </div>
+                        <div class="face face-2">
+                            <p>Качественная СВО способна подарить тишину, несколько сотен дополнительных мегагерц и уважение друзей и коллег. Что же такое эта СВО? Само название говорит за себя. В системе СВО в качестве теплоносителя используется вода. То есть сначала тепло от нагревающих элементов передается напрямую в воду, в отличии от воздушного, где передача происходит сразу в воздух.</p>
+                                 </div>
+                        </div> 
+   
+            </section>  
+
+        </div>        
+    </div>
+    
+</body>
+<div class='footer'>
+    <div class="contacts">
+        <h2>Design by CatInSky</h2>
+        <a href="https://vk.com/">
+             <img class='img-gal' src="vk.png">
+        </a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+             <img class='img-gal' src="youtube.png">
+        </a>
+    </div>
+</div>
+<script>
+// Установите количество снежинок (больше 30 - 400 не рекомендуется)
+var snowmax=200
+
+// Установите цвета снега. Добавьте столько цветов, сколько захотите
+var snowcolor=new Array("#b9dff5","#b9dff5","#b9dff5","#b9dff5","#b9dff5")
+
+// Установите шрифты, которые создают снежинки. Добавьте столько шрифтов, сколько захотите
+var snowtype=new Array("Times")
+
+// Установите букву, из которой будет создана ваша снежинка (recommended: * )
+var snowletter="*"
+
+// Установите скорость погружения (рекомендуемые значения от 0.3 до 2)
+var sinkspeed=0.6
+
+// Установите максимальный размер снежинок
+var snowmaxsize=35
+
+// Установите минимальный размер снежинок
+var snowminsize=8
+
+// Set 1 for all-over-snowing, set 2 for left-side-snowing
+// Set 3 for center-snowing, set 4 for right-side-snowing
+var snowingzone=1
+
+var snow=new Array()
+var marginbottom
+var marginright
+var timer
+var i_snow=0
+var x_mv=new Array();
+var crds=new Array();
+var lftrght=new Array();
+var browserinfos=navigator.userAgent
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+var ns6=document.getElementById&&!document.all
+var opera=browserinfos.match(/Opera/)
+var browserok=ie5||ns6||opera
+
+function randommaker(range) {
+rand=Math.floor(range*Math.random())
+return rand
+}
+
+function initsnow() {
+if (ie5 || opera) {
+marginbottom = document.body.scrollHeight
+marginright = document.body.clientWidth-15
+}
+else if (ns6) {
+marginbottom = document.body.scrollHeight
+marginright = window.innerWidth-15
+}
+var snowsizerange=snowmaxsize-snowminsize
+for (i=0;i<=snowmax;i++) {
+crds[i] = 0;
+lftrght[i] = Math.random()*15;
+x_mv[i] = 0.03 + Math.random()/10;
+snow[i]=document.getElementById("s"+i)
+snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+snow[i].size=randommaker(snowsizerange)+snowminsize
+snow[i].style.fontSize=snow[i].size+'px';
+snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+snow[i].style.zIndex=1000
+snow[i].sink=sinkspeed*snow[i].size/5
+if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+snow[i].style.left=snow[i].posx+'px';
+snow[i].style.top=snow[i].posy+'px';
+}
+movesnow()
+}
+
+function movesnow() {
+for (i=0;i<=snowmax;i++) {
+crds[i] += x_mv[i];
+snow[i].posy+=snow[i].sink
+snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i])+'px';
+snow[i].style.top=snow[i].posy+'px';
+
+if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+snow[i].posy=0
+}
+}
+var timer=setTimeout("movesnow()",50)
+}
+
+for (i=0;i<=snowmax;i++) {
+document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+}
+if (browserok) {
+window.onload=initsnow
+}
+</script>
+</html>
